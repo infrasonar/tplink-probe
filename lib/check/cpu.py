@@ -24,6 +24,14 @@ class CheckCPU(Check):
         if items is None:  # can be an empty list
             raise CheckException('no data found')
 
+        # 60 is the fallback we use in get_snmp_client
+        interval = config.get('_interval', 60)
+        for item in items:
+            item.pop('tpSysMonitorCpu5Seconds')
+            cpu_60 = item.pop('tpSysMonitorCpu1Minute')
+            cpu_300 = item.pop('tpSysMonitorCpu5Minutes')
+            item['tpSysMonitorCpu'] = cpu_60 if interval < 300 else cpu_300
+
         return {
             'cpu': items
         }
