@@ -32,6 +32,8 @@ See the [SNMP probe](https://github.com/infrasonar/snmp-probe#config).
 ## Dry run
 
 Available checks:
+- `cpu`
+- `memory`
 - `system`
 
 Create a yaml file, for example _(test.yaml)_:

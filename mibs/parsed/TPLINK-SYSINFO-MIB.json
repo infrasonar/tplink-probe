@@ -1,0 +1,230 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-TC",
+      [
+        "TimeStamp"
+      ]
+    ],
+    [
+      "SNMPv2-SMI",
+      [
+        "OBJECT-TYPE"
+      ]
+    ],
+    [
+      "TPLINK-MIB",
+      [
+        "tplinkMgmt"
+      ]
+    ],
+    [
+      "RFC1213-MIB",
+      [
+        "ifIndex"
+      ]
+    ]
+  ],
+  "tplinkSysInfoMIB": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "tplinkMgmt",
+      1
+    ]
+  },
+  "tplinkSysInfoMIBObjects": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "tplinkSysInfoMIB",
+      1
+    ]
+  },
+  "tplinkSysInfoNotifications": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "tplinkSysInfoMIB",
+      2
+    ]
+  },
+  "tpSysInfoDescription": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "tplinkSysInfoMIBObjects",
+      1
+    ]
+  },
+  "tpSysInfoHostName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "tplinkSysInfoMIBObjects",
+      2
+    ]
+  },
+  "tpSysInfoLocation": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "tplinkSysInfoMIBObjects",
+      3
+    ]
+  },
+  "tpSysInfoContact": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "tplinkSysInfoMIBObjects",
+      4
+    ]
+  },
+  "tpSysInfoHwVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "tplinkSysInfoMIBObjects",
+      5
+    ]
+  },
+  "tpSysInfoSwVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "tplinkSysInfoMIBObjects",
+      6
+    ]
+  },
+  "tpSysInfoMacAddr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "tplinkSysInfoMIBObjects",
+      7
+    ]
+  },
+  "tpSysInfoSerialNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "tplinkSysInfoMIBObjects",
+      8
+    ]
+  },
+  "tpSysInfoUpTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeStamp"
+    },
+    "index": null,
+    "value": [
+      "tplinkSysInfoMIBObjects",
+      9
+    ]
+  },
+  "tpSysInfoSerialPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "9600",
+        "1": "19200",
+        "2": "38400",
+        "3": "57600",
+        "4": "115200"
+      }
+    },
+    "index": null,
+    "value": [
+      "tplinkSysInfoMIBObjects",
+      10
+    ]
+  },
+  "tpSysInfoPortTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF TPSYSINFOPORTENTRY"
+    },
+    "index": null,
+    "value": [
+      "tplinkSysInfoMIBObjects",
+      11
+    ]
+  },
+  "tpSysInfoPortEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TPSYSINFOPORTENTRY"
+    },
+    "index": [
+      "ifIndex"
+    ],
+    "value": [
+      "tpSysInfoPortTable",
+      1
+    ]
+  },
+  "TPSYSINFOPORTENTRY": {
+    "tp": "SEQUENCE"
+  },
+  "tpSysInfoPortRxUtilization": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "tpSysInfoPortEntry",
+      1
+    ]
+  },
+  "tpSysInfoPortTxUtilization": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "tpSysInfoPortEntry",
+      2
+    ]
+  },
+  "tpSysInfoLed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "off",
+        "1": "on"
+      }
+    },
+    "index": null,
+    "value": [
+      "tplinkSysInfoMIBObjects",
+      12
+    ]
+  }
+}

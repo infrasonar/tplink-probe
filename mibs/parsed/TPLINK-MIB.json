@@ -1,0 +1,65 @@
+{
+  "IMPORTS": [
+    [
+      "RFC1155-SMI",
+      [
+        "enterprises"
+      ]
+    ],
+    [
+      "SNMPv2-SMI",
+      [
+        "OBJECT-IDENTITY"
+      ]
+    ]
+  ],
+  "tplink": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "enterprises",
+      11863
+    ]
+  },
+  "switch": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "tplink",
+      1
+    ]
+  },
+  "router": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "tplink",
+      2
+    ]
+  },
+  "wireless": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "tplink",
+      3
+    ]
+  },
+  "adsl": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "tplink",
+      4
+    ]
+  },
+  "tplinkProducts": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "tplink",
+      5
+    ]
+  },
+  "tplinkMgmt": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "tplink",
+      6
+    ]
+  }
+}

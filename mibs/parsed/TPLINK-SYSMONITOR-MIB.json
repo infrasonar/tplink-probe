@@ -1,0 +1,183 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY"
+      ]
+    ],
+    [
+      "SNMPv2-SMI",
+      [
+        "OBJECT-TYPE"
+      ]
+    ],
+    [
+      "SNMPv2-SMI",
+      [
+        "NOTIFICATION-TYPE"
+      ]
+    ],
+    [
+      "TPLINK-MIB",
+      [
+        "tplinkMgmt"
+      ]
+    ]
+  ],
+  "tplinkSysMonitorMIB": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "tplinkMgmt",
+      4
+    ]
+  },
+  "tplinkSysMonitorMIBObjects": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "tplinkSysMonitorMIB",
+      1
+    ]
+  },
+  "tpSysMonitorCpu": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "tplinkSysMonitorMIBObjects",
+      1
+    ]
+  },
+  "tpSysMonitorCpuTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF TPSYSMONITORCPUENTRY"
+    },
+    "index": null,
+    "value": [
+      "tpSysMonitorCpu",
+      1
+    ]
+  },
+  "tpSysMonitorCpuEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TPSYSMONITORCPUENTRY"
+    },
+    "index": [
+      "tpSysMonitorCpuUnitNumber"
+    ],
+    "value": [
+      "tpSysMonitorCpuTable",
+      1
+    ]
+  },
+  "TPSYSMONITORCPUENTRY": {
+    "tp": "SEQUENCE"
+  },
+  "tpSysMonitorCpuUnitNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "tpSysMonitorCpuEntry",
+      1
+    ]
+  },
+  "tpSysMonitorCpu5Seconds": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "tpSysMonitorCpuEntry",
+      2
+    ]
+  },
+  "tpSysMonitorCpu1Minute": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "tpSysMonitorCpuEntry",
+      3
+    ]
+  },
+  "tpSysMonitorCpu5Minutes": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "tpSysMonitorCpuEntry",
+      4
+    ]
+  },
+  "tpSysMonitorMemory": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "tplinkSysMonitorMIBObjects",
+      2
+    ]
+  },
+  "tpSysMonitorMemoryTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF TPSYSMONITORMEMORYENTRY"
+    },
+    "index": null,
+    "value": [
+      "tpSysMonitorMemory",
+      1
+    ]
+  },
+  "tpSysMonitorMemoryEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TPSYSMONITORMEMORYENTRY"
+    },
+    "index": [
+      "tpSysMonitorMemoryUnitNumber"
+    ],
+    "value": [
+      "tpSysMonitorMemoryTable",
+      1
+    ]
+  },
+  "TPSYSMONITORMEMORYENTRY": {
+    "tp": "SEQUENCE"
+  },
+  "tpSysMonitorMemoryUnitNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "tpSysMonitorMemoryEntry",
+      1
+    ]
+  },
+  "tpSysMonitorMemoryUtilization": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "tpSysMonitorMemoryEntry",
+      2
+    ]
+  },
+  "tplinkSysMonitorNotifications": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "tplinkSysMonitorMIB",
+      2
+    ]
+  }
+}
