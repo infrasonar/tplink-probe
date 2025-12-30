@@ -1,7 +1,7 @@
 from asyncsnmplib.mib.mib_index import MIB_INDEX
 from libprobe.asset import Asset
 from libprobe.check import Check
-from libprobe.exceptions import IgnoreCheckException
+from libprobe.exceptions import CheckException
 from ..snmpclient import get_snmp_client
 from ..snmpquery import snmpquery
 
@@ -12,6 +12,7 @@ QUERIES = (
 
 class CheckMemory(Check):
     key = 'memory'
+    unchanged_eol = 14400
 
     @staticmethod
     async def run(asset: Asset, local_config: dict, config: dict) -> dict:
@@ -20,8 +21,8 @@ class CheckMemory(Check):
         state = await snmpquery(snmp, QUERIES)
 
         items = state.get('tpSysMonitorMemoryEntry')
-        if not items:
-            raise IgnoreCheckException
+        if items is None:  # can be an empty list
+            raise CheckException('no data found')
 
         return {
             'memory': items
